@@ -37,7 +37,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="BNM-sV-S2V" detailTextLabel="QQU-jA-PYT" style="IBUITableViewCellStyleValue1" id="soq-az-aq4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlistCell" textLabel="BNM-sV-S2V" detailTextLabel="QQU-jA-PYT" style="IBUITableViewCellStyleValue1" id="soq-az-aq4">
                                 <rect key="frame" x="0.0" y="111" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="soq-az-aq4" id="jLi-VW-vXo">
@@ -61,7 +61,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jjE-J0-XyA" kind="show" id="dPV-ev-03R"/>
+                                    <segue destination="jjE-J0-XyA" kind="show" identifier="" id="dPV-ev-03R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
