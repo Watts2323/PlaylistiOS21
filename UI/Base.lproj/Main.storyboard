@@ -72,7 +72,15 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Playlist!!!!" id="8rg-GA-Sxx">
                         <barButtonItem key="backBarButtonItem" title="Back" id="0Gm-7q-moa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xDY-Cz-Efg">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="HNQ-eo-lWM" id="UHz-Gq-JUP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playlistTextField" destination="MZq-Pf-2RV" id="orH-ja-hMy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vl5-Uz-NUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +154,10 @@
                             <outlet property="delegate" destination="jjE-J0-XyA" id="ZMU-RP-ktZ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="artistTextField" destination="3Gx-Y0-5zf" id="Pd5-Oc-vwR"/>
+                        <outlet property="songTextField" destination="vJx-kt-9Dq" id="AdG-1S-Qlt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anm-S3-uYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

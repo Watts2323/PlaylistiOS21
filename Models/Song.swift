@@ -9,7 +9,14 @@
 import Foundation
 
 
-class Song {
+class Song: Equatable {
+    static func == (lhs: Song, rhs: Song) -> Bool {
+        if lhs.title != rhs.title { return false }
+        if lhs.artist != rhs.artist { return false }
+        return true
+    }
+    
+    
     var title: String
     var artist: String
     

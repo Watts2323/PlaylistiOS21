@@ -8,11 +8,18 @@
 
 import Foundation
 
-class Playlist {
+class Playlist: Equatable {
+    // now we can compair playlits and have access to helper methods
+    static func == (lhs: Playlist, rhs: Playlist) -> Bool {
+        if lhs.title != rhs.title {return false }
+        if lhs.songs != rhs.songs { return false }
+        return true
+    }
+    
     var title: String
     var songs: [Song] = []
     
-    init(title: String, song: [Song] = []) {
+    init(title: String, songs: [Song] = []) {
         self.title = title
         self.songs = songs
     }
