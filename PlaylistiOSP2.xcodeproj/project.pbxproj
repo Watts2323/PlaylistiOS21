@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		19BBB3822136FFC500F85BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB3812136FFC500F85BB9 /* AppDelegate.swift */; };
-		19BBB3842136FFC500F85BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB3832136FFC500F85BB9 /* ViewController.swift */; };
 		19BBB3872136FFC500F85BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BBB3852136FFC500F85BB9 /* Main.storyboard */; };
 		19BBB3892136FFC700F85BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19BBB3882136FFC700F85BB9 /* Assets.xcassets */; };
 		19BBB38C2136FFC700F85BB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BBB38A2136FFC700F85BB9 /* LaunchScreen.storyboard */; };
+		19BBB3962137076B00F85BB9 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB3952137076B00F85BB9 /* SongTableViewController.swift */; };
+		19BBB3982137079E00F85BB9 /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB3972137079E00F85BB9 /* PlaylistTableViewController.swift */; };
+		19BBB39E2137086B00F85BB9 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB39D2137086B00F85BB9 /* Song.swift */; };
+		19BBB3A02137087E00F85BB9 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BBB39F2137087E00F85BB9 /* Playlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19BBB37E2136FFC500F85BB9 /* PlaylistiOSP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaylistiOSP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BBB3812136FFC500F85BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19BBB3832136FFC500F85BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19BBB3862136FFC500F85BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19BBB3882136FFC700F85BB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19BBB38B2136FFC700F85BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19BBB38D2136FFC700F85BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19BBB3952137076B00F85BB9 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongTableViewController.swift; path = Controllers/SongTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		19BBB3972137079E00F85BB9 /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
+		19BBB39D2137086B00F85BB9 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		19BBB39F2137087E00F85BB9 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,10 @@
 		19BBB3752136FFC500F85BB9 = {
 			isa = PBXGroup;
 			children = (
+				19BBB39C2137084F00F85BB9 /* UI */,
+				19BBB39B213707DA00F85BB9 /* Models */,
+				19BBB39A213707C100F85BB9 /* Resources */,
+				19BBB399213707A700F85BB9 /* Controllers */,
 				19BBB3802136FFC500F85BB9 /* PlaylistiOSP2 */,
 				19BBB37F2136FFC500F85BB9 /* Products */,
 			);
@@ -54,14 +64,45 @@
 		19BBB3802136FFC500F85BB9 /* PlaylistiOSP2 */ = {
 			isa = PBXGroup;
 			children = (
-				19BBB3812136FFC500F85BB9 /* AppDelegate.swift */,
-				19BBB3832136FFC500F85BB9 /* ViewController.swift */,
-				19BBB3852136FFC500F85BB9 /* Main.storyboard */,
-				19BBB3882136FFC700F85BB9 /* Assets.xcassets */,
-				19BBB38A2136FFC700F85BB9 /* LaunchScreen.storyboard */,
-				19BBB38D2136FFC700F85BB9 /* Info.plist */,
 			);
 			path = PlaylistiOSP2;
+			sourceTree = "<group>";
+		};
+		19BBB399213707A700F85BB9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19BBB3972137079E00F85BB9 /* PlaylistTableViewController.swift */,
+				19BBB3952137076B00F85BB9 /* SongTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		19BBB39A213707C100F85BB9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19BBB38D2136FFC700F85BB9 /* Info.plist */,
+				19BBB3882136FFC700F85BB9 /* Assets.xcassets */,
+				19BBB3812136FFC500F85BB9 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		19BBB39B213707DA00F85BB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				19BBB39D2137086B00F85BB9 /* Song.swift */,
+				19BBB39F2137087E00F85BB9 /* Playlist.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		19BBB39C2137084F00F85BB9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				19BBB38A2136FFC700F85BB9 /* LaunchScreen.storyboard */,
+				19BBB3852136FFC500F85BB9 /* Main.storyboard */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19BBB3842136FFC500F85BB9 /* ViewController.swift in Sources */,
+				19BBB39E2137086B00F85BB9 /* Song.swift in Sources */,
 				19BBB3822136FFC500F85BB9 /* AppDelegate.swift in Sources */,
+				19BBB3982137079E00F85BB9 /* PlaylistTableViewController.swift in Sources */,
+				19BBB3962137076B00F85BB9 /* SongTableViewController.swift in Sources */,
+				19BBB3A02137087E00F85BB9 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PlaylistiOSP2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PlaylistiOSP2/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
