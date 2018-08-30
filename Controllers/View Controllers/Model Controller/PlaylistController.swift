@@ -31,6 +31,10 @@ class PlaylistController {
         playlists.append(playlist)
     }
     
+    func createSong(song: Song, from playlist: Playlist) {
+        playlist.songs.append(song)
+    }
+    
     //Read
     
     //Update

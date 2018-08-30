@@ -61,7 +61,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jjE-J0-XyA" kind="show" identifier="" id="dPV-ev-03R"/>
+                                    <segue destination="jjE-J0-XyA" kind="show" identifier="toSongDetail" id="dPV-ev-03R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="661.60000000000002" y="152.47376311844079"/>
         </scene>
-        <!--Song Table View Controller-->
+        <!--Title-->
         <scene sceneID="EHf-k0-3PF">
             <objects>
                 <tableViewController id="jjE-J0-XyA" customClass="SongTableViewController" customModule="PlaylistiOSP2" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,7 +124,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="tUM-3T-jHW" detailTextLabel="lek-j9-elo" rowHeight="42" style="IBUITableViewCellStyleValue1" id="obP-OL-t0X">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" textLabel="tUM-3T-jHW" detailTextLabel="lek-j9-elo" rowHeight="42" style="IBUITableViewCellStyleValue1" id="obP-OL-t0X">
                                 <rect key="frame" x="0.0" y="132" width="375" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obP-OL-t0X" id="gfH-bg-iu0">
@@ -154,6 +154,13 @@
                             <outlet property="delegate" destination="jjE-J0-XyA" id="ZMU-RP-ktZ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="Tu3-9h-g3p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6PL-Kw-uuG">
+                            <connections>
+                                <action selector="addSongButtonTapped:" destination="jjE-J0-XyA" id="QnR-i8-S6p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="artistTextField" destination="3Gx-Y0-5zf" id="Pd5-Oc-vwR"/>
                         <outlet property="songTextField" destination="vJx-kt-9Dq" id="AdG-1S-Qlt"/>
