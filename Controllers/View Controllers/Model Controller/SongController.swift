@@ -14,6 +14,7 @@ class SongController {
         //line 15 is an instance of Song
         let song = Song(title: title, artist: artist)
         PlaylistController.sharedInstance.createSong(song: song, from: playlist)
+        PlaylistController.sharedInstance.save()
     }
     
     static func deleteSong(from playlist: Playlist, song: Song) {

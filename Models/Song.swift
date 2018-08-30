@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Song: Equatable {
+class Song: Codable, Equatable {
     static func == (lhs: Song, rhs: Song) -> Bool {
         if lhs.title != rhs.title { return false }
         if lhs.artist != rhs.artist { return false }

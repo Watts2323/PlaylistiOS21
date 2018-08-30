@@ -23,12 +23,17 @@ class PlaylistController {
     //Source OF TRUTH! how you populate app, how u delete something, how you add something.
     var playlists: [Playlist] = []
     
+    init() {
+        self.playlists = load()
+    }
+    
     //Create
     /// This creates a brand new Playlist- and adds it to our SOURCE OF TRUTH!
     func create(title: String) {
         //line 29 is an instance of playlist
         let playlist = Playlist(title: title)
         playlists.append(playlist)
+        save()
     }
     
     func createSong(song: Song, from playlist: Playlist) {
@@ -47,6 +52,54 @@ class PlaylistController {
         
         guard let index = playlists.index(of: playlistToDelete) else { return }
         playlists.remove(at: index)
+        save()
+    }
+    
+    //MARK: Save and load
+    
+    //This is our train track to where we can save
+    func fileUrl() -> URL? {
+        // Thus ius the class where we are saving to
+        // this is saving to the actual IPHONE
+        let fileManager = FileManager.default
+        // this is the locations of there we can save it
+        let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+        // This is the one location (Path)
+        guard let url = urls.first else { return nil }
+        // This is our final custom Path
+        let playlistPath = "playlistApp.json"
+        let destinationURL = url.appendingPathComponent(playlistPath)
+        return url.appendingPathComponent(playlistPath)
+        print("\(destinationURL)")
+        return destinationURL
+    }
+    
+    
+    func save() {
+        let encoder = JSONEncoder()
+        do {
+        let data = try encoder.encode(playlists)
+            guard let fileUrl = fileUrl() else { return }
+            try data.write(to: fileUrl)
+            
+        } catch let error {
+            print("Error saving to file \(#function) \(error) \(error.localizedDescription)")
+            
+        }
+    }
+    
+    func load() -> [Playlist] {
+        let decoder = JSONDecoder()
+        
+        do {
+            guard let fileUrl = fileUrl() else { return [] }
+            let data = try Data(contentsOf: fileUrl)
+            let playlists = try decoder.decode([Playlist].self, from: data)
+            return playlists
+        } catch let error {
+            print("Error loading playlist \(error) \(error.localizedDescription)")
+            return []
+        }
     }
 }
 
