@@ -19,12 +19,16 @@ class SongTableViewController: UITableViewController {
 
     @IBAction func addSongButtonTapped(_ sender: UIBarButtonItem) {
         guard let artistFromTextField = artistTextField.text,
-            let songFromTextField = songTextField.text, let playlist = playlist else { return }
+            let songFromTextField = songTextField.text,
+            let playlist = playlist, artistFromTextField != "",
+            !songFromTextField.isEmpty else { return }
         
         SongController.addSong(title: songFromTextField, artist: artistFromTextField, from: playlist)
         
         //Hey you. tableView. go do your job again- re run your data source
         tableView.reloadData()
+        artistTextField.text = ""
+        songTextField.text = ""
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,12 +65,6 @@ class SongTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        if segue.identifier == "toSongDetail"
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+ 
 
 }
